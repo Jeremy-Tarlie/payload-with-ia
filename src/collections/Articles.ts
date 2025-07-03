@@ -1,12 +1,11 @@
 import type { CollectionConfig } from 'payload'
 import FillFieldsButton from './components/FillFieldsButtonClient'
 
-export const Users: CollectionConfig = {
-  slug: 'users',
+export const Articles: CollectionConfig = {
+  slug: 'articles',
   admin: {
-    useAsTitle: 'email',
+    useAsTitle: 'name',
   },
-  auth: true,
   fields: [
     {
       name: 'ai-fill-button',
@@ -17,6 +16,18 @@ export const Users: CollectionConfig = {
           Field: FillFieldsButton as any,
         },
       },
+    },
+    {
+      name: 'name',
+      type: 'text',
+    },
+    {
+      name: 'email',
+      type: 'email',
+    },
+    {
+      name: 'phone',
+      type: 'text',
     },
   ],
 }
