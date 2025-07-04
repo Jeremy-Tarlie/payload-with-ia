@@ -1,5 +1,4 @@
 import type { CollectionConfig } from 'payload'
-import FillFieldsButton from './components/FillFieldsButtonClient'
 
 export const Articles: CollectionConfig = {
   slug: 'articles',
@@ -7,16 +6,6 @@ export const Articles: CollectionConfig = {
     useAsTitle: 'name',
   },
   fields: [
-    {
-      name: 'ai-fill-button',
-      type: 'ui',
-      admin: {
-        position: 'sidebar',
-        components: {
-          Field: FillFieldsButton as any,
-        },
-      },
-    },
     {
       name: 'name',
       type: 'text',
@@ -28,6 +17,19 @@ export const Articles: CollectionConfig = {
     {
       name: 'phone',
       type: 'text',
+    },
+    {
+      name: 'rate',
+      type: 'number',
+    },
+    {
+      name: 'description',
+      type: 'textarea',
+    },
+    {
+      name: 'type',
+      type: 'select',
+      options: ['article', 'video', 'podcast'],
     },
   ],
 }

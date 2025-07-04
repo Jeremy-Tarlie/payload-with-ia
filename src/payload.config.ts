@@ -7,6 +7,8 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
+import { injectAIFillButton } from './collections/components/injectAIFillButton'
+
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Articles } from './collections/Articles'
@@ -21,7 +23,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Articles],
+  collections: [injectAIFillButton(Users), injectAIFillButton(Articles), injectAIFillButton(Media)],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
